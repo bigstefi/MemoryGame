@@ -49,3 +49,7 @@ back color of the Cards is BLACK, have the Colors be calculated from 55-200, eac
 being split into CardCount/3. Default: define an array of 20 Colors, maximizing the board size to 20 cards
 
 winget install --id Git.Git -e --source winget
+"C:\Program Files\Git\bin\git.exe" config --global user.email "bigstefi@yahoo.com.com"
+"C:\Program Files\Git\bin\git.exe" config --global user.name "bigstefi"
+"C:\Program Files\Git\bin\git.exe" commit -m "First functional version"
+"C:\Program Files\Git\bin\git.exe" push origin main
