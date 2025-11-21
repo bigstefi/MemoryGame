@@ -1,0 +1,23 @@
+{
+    "python.analysis.extraPaths": [
+        "./src",
+        "./tests"
+    ],
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "*Tests.py"
+    ],
+    // "python.testing.pytestArgs": [
+    //     "-v",
+    //     "-s",
+    //     ".",
+    //     "-p",
+    //     "./tests/*Tests.py"
+    // ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true//,
+    //"python.unitTest.pyTestArgs": ["--rootdir=.\\src", "--verbose"]
+}

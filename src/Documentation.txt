@@ -1,0 +1,51 @@
+Card
+Knows about its two faces: front and back (default: black)
+Can display itself, so ShowFront or ShowBack (or Display...), or Show(face), or even Show()
+(using the internal face state), where the state of the face is handled inside Swap.
+Can Swap, actually this is what the GameTable will need. Internally the Card will know
+Knows which face is being shown
+Knows its size (width and height), received in the constructor (from GameTable)
+Can resize itself, so has a Resize(width, height) method called by GameTable whenever 
+the main window size changes (optional)
+Has an OnClicked method (just to simulate event driven behavior)
+
+GameTable
+Knows about how many cards should be (even number) and how to display them (how many rows and columns)
+Tells the Cards which front and back they should have. Back side should be identical for all of them 
+(default: black, more precisely the opposite color of the table color, 
+so each RGBCardBack = 255 - RGBTable (optional))
+Knows which card has been clicked on and informs the Cards as well. 
+    There are 2 approaches for handling this situation
+    - GameTable commands everything: asks Cards to switch their face and re-draws them
+    - Cards themselves know what to do when GameTable tells them they have been clicked on. 
+      Flipping the face, and redrawing themselves is their feature. CardTable instead handles the 
+      incorrect clicks on the same Card, so does n ot propagate the request to the Cards, 
+      rather displays a message to the user (optional)
+    Going with the second option, as in general we want to decrease the responsibility area of each class.
+    If needed, we can split the functionality of the Cards, if needed. Another reason: Cards might be reused
+    in other games, too, so let's move into the Card class whatever can be reused there as well 
+    (just think about Poker, where you also show the front face of the card from time to time)
+Knows its size (width, height), maybe handle full-screen as well (optional)
+Has a border at the margins of the board and also between the Cards. Based on these details it calculates
+the width and height of the Cards respectively the corner coordinates of their upper left corner
+Creates the Cards
+Asks them to show their Back (or simply call Show() as cards will do the face handling)
+Whe the GameTable is clicked, can decide which Card is affected (if the border is clicked, 
+a message could be shown to the user (optional), but even the correct click can also be logged)
+Tells the Cards when their are OnClicked
+Optional: have a label at the bottom, where the user interaction is logged (clicked a card, 
+incorrectly clicked a card, did not click on a card)
+Keeps control of the currently selected and displayed Cards. An array of 2 Card items is used
+Counts the correct clicks. That's it: the counter is incremented only if the second click arrived 
+to a different Card
+If there is match, the cards are stored in a Solved array. They should never be turned down again,
+clicks on them should not be counted
+Considering that this is another expectation fro dispatching the Click to Cards or not, 
+it is worth introducing a method called IsCorrectClick(), which handles these situations
+Has a Clicks counter, which is incrementet at every click attempt (regardless if correct or not). That will
+be used at the final statictics (how many attempts were needed to solve the board)
+Calculates the Colors depending on the number of Cards. Supposing the background is WHITE and the 
+back color of the Cards is BLACK, have the Colors be calculated from 55-200, each of these RGB ranges
+being split into CardCount/3. Default: define an array of 20 Colors, maximizing the board size to 20 cards
+
+winget install --id Git.Git -e --source winget

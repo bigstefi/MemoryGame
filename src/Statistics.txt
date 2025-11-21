@@ -1,0 +1,12 @@
+CardCount=2 Clicks=2 Precision=100.0
+CardCount=4 Clicks=6 Precision=66.66
+CardCount=4 Clicks=4 Precision=100.0
+CardCount=6 Clicks=10 Precision=60.0
+CardCount=6 Clicks=8 Precision=75.0
+CardCount=6 Clicks=10 Precision=60.0
+CardCount=20 Clicks=54 Precision=37.03
+CardCount=20 Clicks=46 Precision=43.41
+CardCount=20 Clicks=38 Precision=52.63
+CardCount=8 Clicks=10 Precision=80.0
+CardCount=8 Clicks=12 Precision=66.67
+CardCount=8 Clicks=10 Precision=80.0
