@@ -1,0 +1,8 @@
+(PowerShell)
+winget install --id Git.Git -e --source winget
+
+(Cmd)
+"C:\Program Files\Git\bin\git.exe" config --global user.email "bigstefi@yahoo.com.com"
+"C:\Program Files\Git\bin\git.exe" config --global user.name "bigstefi"
+"C:\Program Files\Git\bin\git.exe" commit -m "First functional version"
+"C:\Program Files\Git\bin\git.exe" push origin main
